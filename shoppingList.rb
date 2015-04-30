@@ -1,15 +1,15 @@
 def create_list
-  puts "What is the name of the list? "
+  puts "What kind of the list is this? "
   name = gets.chomp
 
   hash = {"name" => name, "items" => Array.new}
 end
 
 def add_list_item
-  puts "What the fuck are you gonna get? "
+  puts "What are you gonna get? "
   item_name = gets.chomp
 
-  print "How much? "
+  print "How many do you need? "
   quantity = gets.chomp.to_i
 
   hash = { "name" => item_name, "quantity" => quantity }
@@ -31,10 +31,10 @@ end
 
 list = create_list()
 
-puts "Add some shit to fucking list!"
+puts "Add items to the list."
 list['items'].push(add_list_item())
 list['items'].push(add_list_item())
 list['items'].push(add_list_item())
 
-puts "Here's your fucking list:\n"
+puts "Here's what you need to pickup:\n"
 print_list(list)
