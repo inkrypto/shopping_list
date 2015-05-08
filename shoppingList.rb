@@ -31,10 +31,18 @@ end
 
 list = create_list()
 
-puts "Add items to the list."
-list['items'].push(add_list_item())
-list['items'].push(add_list_item())
-list['items'].push(add_list_item())
+loop do
+  puts "Add items to the list. Type 'done' when finished."
 
-puts "Here's what you need to pickup:\n"
-print_list(list)
+  # Store the new hash in a variable to check later if the user entered
+  # 'done', if so, we jump out of the loop, otherwise we add to the hash and 
+  # ask again
+  new_hash = add_list_item()
+
+  if new_hash["name"] == 'done'
+    print_list(list)
+    break
+  else
+    list['items'].push(new_hash) 
+  end
+end
